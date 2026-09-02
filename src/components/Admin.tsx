@@ -50,7 +50,7 @@ ${url}
 Your presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.
 
 With love,
-❤️ Teshan & Apsara`;
+❤️ Mihiri & Himodya`;
   };
 
   const handleCopyMessageActive = () => {
@@ -103,7 +103,7 @@ With love,
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 bg-white/80 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] border border-white shadow-[0_20px_50px_rgba(176,137,104,0.15)] relative overflow-hidden"
+            className="lg:col-span-7 bg-white/80 backdrop-blur-2xl p-8 sm:p-10 rounded-[2.5rem] border border-white shadow-[0_20px_50px_rgba(15,23,42,0.15)] relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-rose via-brand-plum to-brand-rose" />
 
@@ -166,7 +166,7 @@ With love,
             className="lg:col-span-5 space-y-8"
           >
             {/* Active Generated Link Box */}
-            <div className="bg-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white shadow-[0_20px_50px_rgba(176,137,104,0.15)] relative overflow-hidden">
+            <div className="bg-white/80 backdrop-blur-2xl p-8 rounded-[2.5rem] border border-white shadow-[0_20px_50px_rgba(15,23,42,0.15)] relative overflow-hidden">
               <h3 className="font-serif text-2xl text-stone-800 mb-4 flex items-center gap-2">
                 <LinkIcon className="w-5 h-5 text-brand-plum" />
                 Generated Link

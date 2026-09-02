@@ -28,16 +28,17 @@ export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, event
             <Sparkles className="w-4 h-4 text-brand-plum animate-pulse" />
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-stone-800 tracking-tight mb-4 drop-shadow-sm">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-black tracking-tight mb-4 drop-shadow-sm">
             {inviteeName}
           </h2>
 
-          <div className="flex items-center gap-4 justify-center max-w-xl mx-auto">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-brand-plum/40" />
-            <p className="text-stone-600 font-serif italic text-lg sm:text-xl">
-              We joyfully invite you to celebrate <span className="text-brand-plum font-semibold">{eventLabel}</span> with us.
+          <div className="flex flex-col items-center gap-4 justify-center max-w-xl mx-auto">
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-brand-plum/40 to-transparent" />
+            <p className="text-stone-600 font-serif italic text-lg sm:text-xl text-center leading-relaxed">
+              are finally making it official.<br/><br/>
+              We warmly invite you to celebrate an evening of love, laughter, and new beginnings.
             </p>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-brand-plum/40" />
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-brand-plum/40 to-transparent" />
           </div>
 
           <Heart className="w-5 h-5 text-brand-plum mt-6 fill-brand-lavender/20 animate-pulse" />

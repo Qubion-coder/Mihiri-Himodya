@@ -25,7 +25,7 @@ export const FloatingPetals: React.FC = () => {
 
   useEffect(() => {
     // Brush pink / rose colors
-    const colors = ['#f0b9c3', '#f4c6c6', '#e8a5b3', '#f8dbdf'];
+    const colors = ['#E2E8F0', '#f4c6c6', '#e8a5b3', '#F1F5F9'];
     const count = getPetalCount();
 
     const newPetals = Array.from({ length: count }).map((_, i) => ({

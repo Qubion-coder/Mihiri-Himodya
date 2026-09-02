@@ -9,22 +9,13 @@ interface LocationProps {
 export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
   const venues = [
     {
-      id: 'ceremony',
-      name: "St. Mary's Church",
-      city: "Negombo",
-      quote: `"A beautiful and sacred place where we will unite in holy matrimony."`,
-      liveLocationUrl: "https://maps.app.goo.gl/kPtBACZFd3AcKa1u9",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Negombo%2C_St._Mary%27s_Church%2C_2025-07_CN-02.jpg",
-      label: "The Ceremony"
-    },
-    {
-      id: 'reception',
-      name: "Centrium Ballroom, Avenra Gardens",
-      city: "Negombo",
-      quote: `"A serene and elegant setting where we will celebrate our wedding function with joy and laughter."`,
-      liveLocationUrl: "https://maps.app.goo.gl/3HPomRVMHdbHUbo86",
-      imageUrl: "https://www.aha.lk/img/projects/1%20%281%291565002653.jpg",
-      label: "The Reception"
+      id: 'wedding',
+      name: "Grand Walawwa",
+      city: "Kegalle",
+      quote: `"A beautiful and serene setting where we will celebrate our special day with joy and laughter."`,
+      liveLocationUrl: "https://maps.app.goo.gl/fDMS11vZAsuWCiqT7",
+      imageUrl: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnwFmhzxMQZc2anKtfnHqwl7jC5YDpyy8xkacHCbII8zm8mtH02rLsS_BYynlFvZJZIJctI98fl5izbuOuT9yBdhS-CaFIAWHQ_5CqIj8Ukjz0drJTxbxv4k4OVtDfcZE3uvs0CfA=w408-h271-k-no",
+      label: "The Celebration"
     }
   ];
 
@@ -47,7 +38,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className={`w-full lg:w-[45%] flex z-20 ${isReversed ? 'lg:-translate-x-12' : 'lg:translate-x-12'}`}
               >
-                <div className="w-full h-full bg-white/90 backdrop-blur-2xl p-10 sm:p-14 lg:p-16 rounded-[2.5rem] shadow-[0_30px_60px_rgba(176,137,104,0.15)] border border-brand-lavender/30 relative overflow-hidden group flex flex-col justify-center">
+                <div className="w-full h-full bg-white/90 backdrop-blur-2xl p-10 sm:p-14 lg:p-16 rounded-[2.5rem] shadow-[0_30px_60px_rgba(15,23,42,0.15)] border border-brand-lavender/30 relative overflow-hidden group flex flex-col justify-center">
                   
                   {/* Elegant top border gradient */}
                   <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-rose via-brand-lavender to-brand-plum" />
