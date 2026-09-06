@@ -64,14 +64,16 @@ export function InvitationContent({
       )}
 
       <DeferredMount active={active} delay={120} minHeight="40vh">
-        <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush via-white to-brand-blush relative overflow-hidden">
-          {/* Watermark Background Image covering full section including padding */}
-          <div className="absolute inset-x-0 bottom-0 top-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-10 mix-blend-multiply">
+        <div className="py-24 sm:py-32 bg-[#020035] relative overflow-hidden">
+          {/* Background Image covering full section including padding */}
+          <div className="absolute inset-x-0 bottom-0 top-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-100">
             <img 
               src="/WhatsApp%20Image%202026-07-09%20at%2021.34.28.jpeg" 
-              alt="Watermark background" 
-              className="w-full h-full object-cover object-top sm:object-center sepia contrast-125" 
+              alt="Couple background" 
+              className="w-full h-full object-cover object-top sm:object-center" 
             />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-[#020035]/60" />
           </div>
           <CoupleDetails />
         </div>
@@ -112,19 +114,19 @@ export function InvitationContent({
       </DeferredMount>
 
       <DeferredMount active={active} delay={420} minHeight="30vh">
-        <div className="py-24 sm:py-32 bg-brand-blush relative overflow-hidden">
+        <div className="relative overflow-hidden bg-[#020035]">
           <RSVPForm inviteeName={fullInviteeName} eventName={eventLabel} eventParam={eventParam} />
         </div>
       </DeferredMount>
 
       <DeferredMount active={active} delay={480} minHeight="30vh">
-        <div className="py-24 sm:py-32 bg-gradient-to-b from-brand-blush to-white relative mt-10 overflow-hidden">
+        <div className="relative overflow-hidden bg-[#020035]">
           <WishesSection eventParam={eventParam} inviteeName={fullInviteeName} />
         </div>
       </DeferredMount>
 
       <DeferredMount active={active} delay={520}>
-        <footer className="py-12 bg-white border-t border-brand-lavender/20 text-center relative overflow-hidden mt-10">
+        <footer className="py-12 bg-white border-t border-brand-lavender/20 text-center relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-lavender/10 blur-[80px] rounded-full pointer-events-none" />
           <Heart className="w-6 h-6 mx-auto mb-6 text-brand-plum fill-brand-lavender/20" />
           <p className="font-names text-4xl sm:text-5xl text-stone-800 mb-2">Mihiri & Himodya</p>

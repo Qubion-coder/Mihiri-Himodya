@@ -75,60 +75,61 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 relative py-12">
-      {/* Background ambient glow */}
-      <div className="absolute top-0 right-1/4 w-3/4 h-3/4 bg-brand-lavender/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+    <div className="w-full bg-[#020035] text-white relative">
+      <div className="max-w-4xl mx-auto px-6 relative py-12 lg:py-16">
+        {/* Background ambient glow */}
+        <div className="absolute top-0 right-1/4 w-3/4 h-3/4 bg-white/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <div className="text-center mb-16 relative">
-        <Sparkles className="absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 text-brand-lavender/40 animate-pulse" />
-        <span className="text-brand-plum uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block drop-shadow-sm">
-          Guestbook
-        </span>
-        <h2 className="text-5xl sm:text-7xl font-display text-stone-800 tracking-tight drop-shadow-sm">
-          Blessings & <span className="italic font-light text-brand-plum">Wishes</span>
-        </h2>
-        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-brand-lavender/60 to-transparent mx-auto mt-8" />
-      </div>
+        <div className="text-center mb-16 relative">
+          <Sparkles className="absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 text-white/40 animate-pulse" />
+          <span className="text-white uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block drop-shadow-sm">
+            Guestbook
+          </span>
+          <h2 className="text-5xl sm:text-7xl font-display text-white tracking-tight drop-shadow-sm">
+            Blessings & <span className="italic font-light text-white/80">Wishes</span>
+          </h2>
+          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mt-8" />
+        </div>
 
-      <div className="flex flex-col items-center">
-        
-        {/* Beautiful Centered Form Box */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="w-full glass p-8 sm:p-14 rounded-[3rem] border border-white/60 shadow-[0_30px_60px_rgba(15,23,42,0.1)] relative overflow-hidden bg-white/70 backdrop-blur-3xl mb-16"
-        >
-          {/* Subtle top reflection line */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-lavender to-transparent opacity-50" />
+        <div className="flex flex-col items-center">
+          
+          {/* Beautiful Centered Form Box */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="w-full p-8 sm:p-14 rounded-[3rem] border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-2xl mb-16"
+          >
+            {/* Subtle top reflection line */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-rose via-brand-lavender to-brand-plum" />
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="text-center mb-10">
-              <p className="text-stone-500 font-serif italic text-lg leading-relaxed max-w-lg mx-auto">
-                Leave a little note or a piece of advice for our journey ahead.
-              </p>
-            </div>
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="text-center mb-10">
+                <p className="text-white/80 font-serif italic text-lg leading-relaxed max-w-lg mx-auto">
+                  Leave a little note or a piece of advice for our journey ahead.
+                </p>
+              </div>
 
             <div className="space-y-6">
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2 text-left">Your Name</label>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-3 ml-2 text-left">Your Name</label>
                 <input
                   required
                   type="text"
                   placeholder="E.g., Uncle John"
-                  className="w-full bg-white/80 px-6 py-4 rounded-full border border-stone-200/60 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-stone-700"
+                  className="w-full bg-white/10 text-white placeholder:text-white/40 px-6 py-4 rounded-full border border-white/20 focus:ring-2 focus:ring-white/40 focus:border-white/50 outline-none transition-all duration-300 font-serif italic text-lg shadow-inner"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
               
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2 text-left">Your Message</label>
+                <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-3 ml-2 text-left">Your Message</label>
                 <textarea
                   required
                   placeholder="Wishing you a lifetime of happiness..."
-                  className="w-full bg-white/80 px-6 py-5 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all duration-300 h-36 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300 text-stone-700"
+                  className="w-full bg-white/10 text-white placeholder:text-white/40 px-6 py-5 rounded-[2rem] border border-white/20 focus:ring-2 focus:ring-white/40 focus:border-white/50 outline-none transition-all duration-300 h-36 resize-none font-serif italic text-lg shadow-inner"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
@@ -139,13 +140,13 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
               <button
                 disabled={isSubmitting}
                 type="submit"
-                className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-stone-900 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
+                className="w-full bg-white text-[#020035] py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-stone-200 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
               >
                 {isSubmitting ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
                   <>
-                    <Send className="w-4 h-4 text-brand-plum" />
+                    <Send className="w-4 h-4 text-[#020035]" />
                     Share Blessing
                   </>
                 )}
@@ -163,22 +164,23 @@ export const WishesSection: React.FC<WishesSectionProps> = ({ eventParam = 'both
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="glass p-8 sm:p-10 rounded-3xl border border-brand-lavender/20 shadow-sm relative overflow-hidden group bg-white/50 backdrop-blur-sm"
+                className="p-8 sm:p-10 rounded-3xl border border-white/10 shadow-[0_15px_30px_rgba(0,0,0,0.2)] relative overflow-hidden group bg-white/5 backdrop-blur-sm"
               >
-                <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-brand-plum/20 to-brand-lavender/40 group-hover:from-brand-plum group-hover:to-brand-lavender transition-all duration-500" />
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-white/20 to-white/10 group-hover:from-white/50 group-hover:to-white/30 transition-all duration-500" />
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-4">
-                  <h4 className="font-display text-2xl text-stone-800 tracking-tight pl-2">{wish.name}</h4>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-stone-400 font-bold bg-white/60 px-3 py-1 rounded-full border border-stone-100/50">
+                  <h4 className="font-display text-2xl text-white tracking-tight pl-2">{wish.name}</h4>
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-white/60 font-bold bg-white/10 px-3 py-1 rounded-full border border-white/10">
                     {wish.createdAt ? getRelativeTime(wish.createdAt) : 'just now'}
                   </span>
                 </div>
-                <p className="text-stone-600 font-serif italic text-lg sm:text-lg leading-relaxed pl-2">
+                <p className="text-white/80 font-serif italic text-lg sm:text-lg leading-relaxed pl-2">
                   "{wish.message}"
                 </p>
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
+      </div>
       </div>
     </div>
   );

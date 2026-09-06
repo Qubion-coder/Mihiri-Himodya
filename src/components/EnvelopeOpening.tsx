@@ -66,7 +66,7 @@ export function EnvelopeOpening({
           align-items: center;
           justify-content: center;
           padding: 20px;
-          background: radial-gradient(ellipse at 30% 20%, #1e293b 0%, #0f172a 60%, #020617 100%);
+          background: radial-gradient(ellipse at 50% 50%, #64748b 0%, #334155 100%);
           perspective: 1500px;
           overflow: hidden;
           font-family: "Cormorant Garamond", serif;
@@ -113,9 +113,9 @@ export function EnvelopeOpening({
         .envelope-base {
           position: absolute;
           inset: 0;
-          background: linear-gradient(145deg, #F8FAFC, #E2E8F0);
+          background: #020035;
           border-radius: 6px;
-          box-shadow: 0 30px 60px -15px rgba(15,23,42,0.3), 0 0 0 1px rgba(15,23,42,0.1);
+          box-shadow: 0 30px 60px -15px rgba(2,0,53,0.4), 0 0 0 1px rgba(2,0,53,0.5);
           z-index: 1;
         }
 
@@ -263,13 +263,11 @@ export function EnvelopeOpening({
           position: absolute;
           top: 0;
           left: 0;
-          width: 66%;
+          width: 50%;
           height: 100%;
-          background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 50%, #F8FAFC 100%);
-          background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%);
-          background-size: 8px 8px;
-          border-right: 1px solid rgba(15,23,42,0.15);
-          box-shadow: 10px 0 30px -10px rgba(15,23,42,0.25);
+          background: #020035;
+          border-right: 1px solid rgba(255,255,255,0.05);
+          box-shadow: 15px 0 30px -10px rgba(0,0,0,0.4);
           transform-origin: left center;
           transform: rotateY(0deg);
           transition: transform 1.5s cubic-bezier(0.25, 1, 0.3, 1), box-shadow 1.5s ease;
@@ -291,53 +289,54 @@ export function EnvelopeOpening({
           box-shadow: -15px 0 25px -10px rgba(0,0,0,0.15);
         }
 
-        /* Satin Ribbon */
-        .ribbon-wrap {
+        /* String & Wax Seal */
+        .seal-wrap {
           position: absolute;
-          top: 55%;
+          top: 50%;
           transform: translateY(-50%);
           width: 100%;
+          height: 120px;
           z-index: 6;
           transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .envelope-container.is-open .ribbon-wrap {
+        .envelope-container.is-open .seal-wrap {
           opacity: 0;
           transform: translateY(-50%) scale(1.05);
           pointer-events: none;
         }
 
-        .ribbon-band {
-          width: 100%;
-          height: 54px;
-          background: linear-gradient(
-            to bottom, 
-            #ffffff 0%, 
-            #F8FAFC 25%, 
-            #E2E8F0 50%, 
-            #F8FAFC 75%, 
-            #e8dfce 100%
-          );
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px rgba(255,255,255,0.6);
-        }
-
-        /* Bow Container */
-        .bow-center {
+        .strings-container {
           position: absolute;
-          top: 27px;
-          left: 55%;
-          transform: translate(-50%, -50%);
-          width: 160px;
-          height: 100px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
         }
 
-        /* Image Bow styling */
-        .bow-image {
+        .string-line {
+          width: 100%;
+          height: 2px;
+          background: #a67c52;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .seal-center {
+          position: absolute;
+          top: 50%;
+          left: 35%;
+          transform: translate(-50%, -50%);
+          width: 200px;
+          height: 200px;
+        }
+
+        .seal-image {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15)) sepia(0.3) saturate(0.7) brightness(1.1) hue-rotate(350deg);
-          transform: scale(1.6);
+          filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
         }
 
         .instruction-toast {
@@ -387,9 +386,10 @@ export function EnvelopeOpening({
           .card-border {
             padding: 30px 16px;
           }
-          .bow-center {
-            width: 140px;
-            height: 90px;
+          .seal-center {
+            width: 160px;
+            height: 160px;
+            left: 35%;
           }
         }
       `}</style>
@@ -473,12 +473,16 @@ export function EnvelopeOpening({
           {/* Opening Left Flap */}
           <div className="flap-left"></div>
 
-          {/* Ribbon Wrapper */}
-          <div className="ribbon-wrap">
-            <div className="ribbon-band"></div>
-            <div className="bow-center">
-              {/* Photorealistic Satin Bow Image */}
-              <img src="/ivory_satin_bow-removebg-preview.png" alt="Satin Bow" loading="eager" className="bow-image" />
+          {/* String & Seal Wrapper */}
+          <div className="seal-wrap">
+            <div className="strings-container">
+              <div className="string-line" style={{ transform: 'rotate(0.5deg) scaleX(1.02)' }}></div>
+              <div className="string-line" style={{ transform: 'rotate(-0.2deg) scaleX(1.02)' }}></div>
+              <div className="string-line" style={{ transform: 'rotate(0.3deg) scaleX(1.02)' }}></div>
+              <div className="string-line" style={{ transform: 'rotate(-0.5deg) scaleX(1.02)' }}></div>
+            </div>
+            <div className="seal-center">
+              <img src="/wax.png" alt="Wax Seal" loading="eager" className="seal-image" />
             </div>
           </div>
 

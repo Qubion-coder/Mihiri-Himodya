@@ -28,10 +28,10 @@ export const Timeline: React.FC<TimelineProps> = ({ event = 'both' }) => {
   return (
     <div className="max-w-4xl mx-auto px-6">
       <div className="text-center mb-20">
-        <span className="text-brand-plum uppercase tracking-[0.4em] text-[10px] font-medium mb-4 block">
+        <span className="text-[#020035] uppercase tracking-[0.4em] text-[10px] font-medium mb-4 block">
           {event === 'homecoming' ? "The Evening's Flow" : "The Day's Flow"}
         </span>
-        <h2 className="text-5xl font-display text-stone-800 tracking-tight">
+        <h2 className="text-5xl font-display text-[#020035] tracking-tight">
           {event === 'homecoming' ? "Homecoming Timeline" : "Wedding Timeline"}
         </h2>
         <div className="w-12 h-px bg-brand-lavender/30 mx-auto mt-6" />
@@ -55,18 +55,18 @@ export const Timeline: React.FC<TimelineProps> = ({ event = 'both' }) => {
             >
               {/* Time */}
               <div className={`flex-1 text-center ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                <span className="text-2xl font-serif text-brand-plum italic">{item.time}</span>
+                <span className="text-2xl font-serif text-[#020035] italic">{item.time}</span>
               </div>
 
               {/* Icon Node */}
               <div className="relative z-10 w-12 h-12 rounded-full bg-white border border-brand-lavender/30 flex items-center justify-center shadow-xl">
-                <item.icon className="w-5 h-5 text-brand-plum" />
+                <item.icon className="w-5 h-5 text-[#020035]" />
               </div>
 
               {/* Content */}
               <div className={`flex-1 text-center ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                <h4 className="text-xl font-display text-stone-800 mb-1">{item.title}</h4>
-                <p className="text-stone-400 text-sm leading-relaxed">{item.desc}</p>
+                <h4 className="text-xl font-display text-[#020035] mb-1">{item.title}</h4>
+                <p className="text-stone-900 text-sm leading-relaxed">{item.desc}</p>
               </div>
             </motion.div>
           ))}

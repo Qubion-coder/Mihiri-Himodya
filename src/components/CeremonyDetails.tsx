@@ -14,7 +14,13 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
       {/* Premium ambient backdrop */}
       <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-gradient-radial from-brand-lavender/10 to-transparent rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      {/* Background Watermark Image */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-30 z-0 bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url('/WhatsApp Image 2026-09-07 at 00.02.43 (1).jpeg')` }}
+      />
+
+      <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
         {/* Left Side: Text Content */}
         <div className="lg:w-1/2 relative z-10 w-full">
           <motion.div
@@ -24,17 +30,17 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-4 mb-6">
-              <span className="text-brand-plum uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[11px] sm:text-xs font-bold drop-shadow-sm">
+              <span className="text-[#020035] uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[11px] sm:text-xs font-bold drop-shadow-sm">
                 The Sacred Union
               </span>
-              <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-brand-plum/60 to-transparent" />
+              <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-[#020035]/60 to-transparent" />
             </div>
 
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-stone-800 mb-8 leading-[1.1] drop-shadow-sm">
-                <>A Celebration of <br /><span className="italic font-light text-brand-plum">Tradition & Love</span></>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display text-[#020035] mb-8 leading-[1.1] drop-shadow-sm">
+                <>A Celebration of <br /><span className="italic font-light text-[#020035]">Tradition & Love</span></>
             </h2>
 
-            <p className="text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-lg">
+            <p className="text-stone-900 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-lg">
                 We are honored to invite you to witness our union as we exchange vows surrounded by the warmth of our loved ones.
             </p>
 
@@ -43,11 +49,11 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
 
               {/* Date */}
               <div className="relative group flex items-center min-h-[48px]">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(15,23,42,0.3)] transition-all duration-500">
-                  <Calendar className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-[#020035] group-hover:shadow-[0_4px_15px_rgba(15,23,42,0.3)] transition-all duration-500">
+                  <Calendar className="w-5 h-5 text-[#020035] group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 group-hover:text-brand-plum transition-colors duration-500">
+                  <h4 className="font-serif text-2xl sm:text-3xl text-[#020035] group-hover:text-[#020035]/70 transition-colors duration-500">
                     Date: December 5, 2026
                   </h4>
                 </div>
@@ -55,19 +61,19 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
 
               {/* Church Ceremony */}
               <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(15,23,42,0.3)] transition-all duration-500">
-                  <Clock className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-[#020035] group-hover:shadow-[0_4px_15px_rgba(15,23,42,0.3)] transition-all duration-500">
+                  <Clock className="w-5 h-5 text-[#020035] group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
+                  <h4 className="font-serif text-2xl sm:text-3xl text-[#020035] mb-3 group-hover:text-[#020035]/70 transition-colors duration-500">
                     Poruwa Ceremony
                   </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
+                  <div className="space-y-1.5 text-stone-900 font-serif text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 06.00 PM
+                      <span className="font-semibold text-[#020035]">Time:</span> 06.00 PM
                     </p>
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-stone-700">Venue:</span> Grand Walawwa,<br className="hidden sm:block" /> Kegalle
+                      <span className="font-semibold text-[#020035]">Venue:</span> Grand Walawwa,<br className="hidden sm:block" /> Kegalle
                     </p>
                   </div>
                 </div>
@@ -75,19 +81,19 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
 
               {/* Wedding Function */}
               <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(15,23,42,0.3)] transition-all duration-500">
-                  <MapPin className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-[#020035] group-hover:shadow-[0_4px_15px_rgba(15,23,42,0.3)] transition-all duration-500">
+                  <MapPin className="w-5 h-5 text-[#020035] group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
+                  <h4 className="font-serif text-2xl sm:text-3xl text-[#020035] mb-3 group-hover:text-[#020035]/70 transition-colors duration-500">
                     Wedding Function
                   </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
+                  <div className="space-y-1.5 text-stone-900 font-serif text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 06.30 PM Onwards
+                      <span className="font-semibold text-[#020035]">Time:</span> 06.30 PM Onwards
                     </p>
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-stone-700">Venue:</span> Grand Walawwa,<br className="hidden sm:block" /> Kegalle
+                      <span className="font-semibold text-[#020035]">Venue:</span> Grand Walawwa,<br className="hidden sm:block" /> Kegalle
                     </p>
                   </div>
                 </div>
