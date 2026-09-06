@@ -39,7 +39,9 @@ export const CoupleDetails: React.FC = () => {
             <span className="text-white uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Groom</span>
             <h3 className="text-4xl sm:text-5xl font-names text-white mb-2 drop-shadow-sm">Himodya</h3>
             <p className="text-white/80 font-century text-xs mb-2"></p>
-            <p className="text-white/80 font-serif italic text-base sm:text-lg">Son of Mr. & Mrs. Senanayake</p>
+            <p className="text-white/80 font-serif italic text-base sm:text-lg">
+              Son of Mr. Sarath Kumara Rathnasiri & Mrs. Sandya Nilmini Wijesundara
+            </p>
           </div>
           <div className="hidden lg:flex justify-end mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />
@@ -61,7 +63,9 @@ export const CoupleDetails: React.FC = () => {
             <span className="text-white uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Bride</span>
             <h3 className="text-4xl sm:text-5xl font-names text-white mb-2 drop-shadow-sm">Mihiri</h3>
             <p className="text-white/80 font-century text-xs mb-2"></p>
-            <p className="text-white/80 font-serif italic text-base sm:text-lg">Daughter of Mr. & Mrs. Ranasinghe</p>
+            <p className="text-white/80 font-serif italic text-base sm:text-lg">
+              Daughter of Mr. Sarath Deshapriya Ranasinghe & Mrs. Deepa Nilmini
+            </p>
           </div>
           <div className="hidden lg:flex justify-start mt-8">
             <Heart className="w-6 h-6 text-brand-lavender/60 fill-brand-lavender/20 transform hover:scale-110 transition-transform cursor-pointer" />
