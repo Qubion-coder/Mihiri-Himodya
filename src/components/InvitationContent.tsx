@@ -80,13 +80,13 @@ export function InvitationContent({
       </DeferredMount>
 
       <DeferredMount active={active} delay={180} minHeight="40vh">
-        <div className="py-24 sm:py-32 bg-white relative overflow-hidden">
+        <div className="pt-0 pb-0 sm:py-32 bg-white relative overflow-hidden">
           <CeremonyDetails event={eventParam} />
         </div>
       </DeferredMount>
 
-      <DeferredMount active={active} delay={240} minHeight="40vh">
-        <div className="pt-24 pb-12 sm:py-32 bg-gradient-to-b from-white via-brand-rose/30 to-brand-blush relative overflow-hidden">
+      <DeferredMount active={active} delay={240}>
+        <div className="pt-0 pb-0 sm:py-32 bg-gradient-to-b from-white via-brand-rose/30 to-brand-blush relative overflow-hidden">
           <Location event={eventParam} />
         </div>
       </DeferredMount>
