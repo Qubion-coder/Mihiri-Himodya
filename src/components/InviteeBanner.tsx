@@ -35,7 +35,6 @@ export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, event
           <div className="flex flex-col items-center gap-4 justify-center max-w-xl mx-auto">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-brand-plum/40 to-transparent" />
             <p className="text-stone-600 font-serif italic text-lg sm:text-xl text-center leading-relaxed">
-              are finally making it official.<br/><br/>
               We warmly invite you to celebrate an evening of love, laughter, and new beginnings.
             </p>
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-brand-plum/40 to-transparent" />

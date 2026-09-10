@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName }) => {
             </span>
           </div>
 
-          <div className="relative mb-6 sm:mb-12 w-full flex justify-center py-4 sm:py-10 px-2 overflow-visible">
+          <div className="relative mb-4 sm:mb-8 w-full flex justify-center py-3 sm:py-8 px-2 overflow-visible">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] sm:w-[125%] h-[150%] sm:h-[160%] bg-gradient-radial from-white/95 via-white/85 to-transparent blur-[40px] sm:blur-[70px] rounded-full pointer-events-none" />
 
             <h1 className="relative text-4xl sm:text-[5.5rem] lg:text-[7.5rem] font-names text-[#0F172A] font-normal leading-normal sm:leading-[0.85] drop-shadow-[0_4px_16px_rgba(255,255,255,0.9)] tracking-normal sm:tracking-tight overflow-visible py-2">
@@ -96,6 +96,16 @@ export const Hero: React.FC<HeroProps> = ({ event = 'both', inviteeName }) => {
               <br className="sm:hidden" />
               HIMODYA
             </h1>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 sm:gap-6 relative z-10 mb-6 sm:mb-10">
+            <div className="hidden sm:block h-[1px] w-12 sm:w-20 bg-gradient-to-r from-transparent via-brand-plum/40 to-transparent" />
+            <div className="bg-white/80 sm:bg-white/70 backdrop-blur-md border border-brand-plum/20 px-6 sm:px-10 py-2 sm:py-2.5 rounded-full shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
+              <p className="font-serif italic text-base sm:text-xl lg:text-2xl text-stone-900 font-semibold tracking-wide text-center">
+                are finally making it official.
+              </p>
+            </div>
+            <div className="hidden sm:block h-[1px] w-12 sm:w-20 bg-gradient-to-l from-transparent via-brand-plum/40 to-transparent" />
           </div>
 
 
