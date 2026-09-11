@@ -464,7 +464,7 @@ export function EnvelopeOpening({
               <div className="text-details">
                 Request the honour of your presence<br />
                 to celebrate their marriage at<br />
-                <span className="text-church">Grand Walawwa</span><br />
+                <span className="text-church">The Grand Walawwa</span><br />
                 Kegalle
               </div>
             </div>

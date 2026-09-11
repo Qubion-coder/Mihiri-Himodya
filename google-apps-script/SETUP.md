@@ -1,17 +1,30 @@
-1. Open your Google Sheet and create two tabs named RSVP and WISH.
-2. Open Extensions > Apps Script.
-3. Replace script content with code from google-apps-script/code.gs.
-4. Click Deploy > New deployment.
-5. Select type: Web app.
-6. Execute as: Me.
-7. Who has access: Anyone.
-8. Deploy and copy the Web App URL.
-9. In your project root, create a file named .env with:
+# Google Apps Script Setup Guide
 
-VITE_GOOGLE_APPS_SCRIPT_URL=YOUR_WEB_APP_URL
+This script handles submissions from both the **RSVP Form** and **Wishes Section** into separate tabs with their respective headers.
 
-10. Restart Vite dev server.
+## Headers Created:
+- **RSVP Tab**:
+  - `Timestamp` | `Full Name` | `Side` | `Guests` | `Dietary Notes`
+- **WISH Tab**:
+  - `Timestamp` | `Name` | `Message`
 
-Notes:
-- If you update Apps Script code later, redeploy a new version.
-- The frontend sends RSVP to sheet RSVP and wishes to sheet WISH.
+---
+
+## Step-by-Step Setup:
+
+1. **Open your Google Sheet** (or create a new one).
+2. Go to the top menu: **Extensions** > **Apps Script**.
+3. Clear any code in the editor and **paste the entire contents** of [`code.gs`](./code.gs).
+4. *(Optional automatic setup)*:
+   - In the toolbar dropdown, select **`setupSheets`** and click **Run**.
+   - Review permissions if prompted (Click *Advanced* > *Go to Untitled project (unsafe)* > *Allow*).
+   - Both **RSVP** and **WISH** tabs will be automatically created with bold navy headers and frozen header rows!
+5. **Deploy the Web App**:
+   - Click **Deploy** > **New deployment** (top right).
+   - Click the gear icon next to "Select type" and choose **Web app**.
+   - Set **Description**: `Wedding RSVP & Wishes API`
+   - Set **Execute as**: `Me` (your email)
+   - Set **Who has access**: **`Anyone`** (⚠️ Critical for public form submissions)
+   - Click **Deploy**.
+6. **Copy the Web App URL** (ends in `/exec`).
+7. Update the script URL in your frontend or `.env` file if needed.

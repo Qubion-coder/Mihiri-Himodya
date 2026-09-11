@@ -73,7 +73,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                       <span className="font-semibold text-[#020035]">Time:</span> 06.00 PM
                     </p>
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-[#020035]">Venue:</span> Grand Walawwa,<br className="hidden sm:block" /> Kegalle
+                      <span className="font-semibold text-[#020035]">Venue:</span> The Grand Walawwa,<br className="hidden sm:block" /> Kegalle
                     </p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                       <span className="font-semibold text-[#020035]">Time:</span> 06.30 PM Onwards
                     </p>
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-[#020035]">Venue:</span> Grand Walawwa,<br className="hidden sm:block" /> Kegalle
+                      <span className="font-semibold text-[#020035]">Venue:</span> The Grand Walawwa,<br className="hidden sm:block" /> Kegalle
                     </p>
                   </div>
                 </div>

@@ -20,6 +20,7 @@ interface InvitationContentProps {
   weddingDate: Date;
   isMusicPlaying: boolean;
   onToggleMusic: () => void;
+  sideParam?: string;
 }
 
 export function InvitationContent({
@@ -30,6 +31,7 @@ export function InvitationContent({
   weddingDate,
   isMusicPlaying,
   onToggleMusic,
+  sideParam = '',
 }: InvitationContentProps) {
   if (!active) return null;
 
@@ -115,7 +117,7 @@ export function InvitationContent({
 
       <DeferredMount active={active} delay={420} minHeight="30vh">
         <div className="relative overflow-hidden bg-[#020035]">
-          <RSVPForm inviteeName={fullInviteeName} eventName={eventLabel} eventParam={eventParam} />
+          <RSVPForm inviteeName={fullInviteeName} eventName={eventLabel} eventParam={eventParam} sideParam={sideParam} />
         </div>
       </DeferredMount>
 

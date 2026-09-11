@@ -7,16 +7,31 @@ interface RSVPFormProps {
   inviteeName?: string;
   eventName?: string;
   eventParam?: string;
+  sideParam?: string;
 }
 
-export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName = 'the celebration', eventParam = 'both' }) => {
+const parseSideParam = (param?: string) => {
+  if (!param) return '';
+  const lower = param.toLowerCase();
+  if (lower.includes('himodya')) return "Himodya's Side (Groom)";
+  if (lower.includes('mihiri')) return "Mihiri's Side (Bride)";
+  return '';
+};
+
+export const RSVPForm: React.FC<RSVPFormProps> = ({
+  inviteeName = '',
+  eventName = 'the celebration',
+  eventParam = 'both',
+  sideParam = '',
+}) => {
   const [formData, setFormData] = useState({
     fullName: inviteeName,
+    side: parseSideParam(sideParam),
     guests: '1',
     dietaryNotes: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbyDuWCJjIQ7egU3VZBzAndlosVuJyfZnbGaEKA47SuOcj6iSQQys1ksRSaphGAB37V_/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbwCVXxys2Qx9MGE86kVD6_cahmfqySgtRArABsppi9_IiGrs1H8xPc9gzFqPbaivFiy/exec";
 
   useEffect(() => {
     if (inviteeName) {
@@ -24,18 +39,33 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
     }
   }, [inviteeName]);
 
+  useEffect(() => {
+    if (sideParam) {
+      const parsed = parseSideParam(sideParam);
+      if (parsed) {
+        setFormData(prev => ({ ...prev, side: parsed }));
+      }
+    }
+  }, [sideParam]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.side) {
+      toast.error("Please select whether you are attending from Mihiri's side (Bride) or Himodya's side (Groom).");
+      return;
+    }
+
     setStatus('loading');
 
     try {
-
       const payload = new FormData();
       payload.append('sheet', 'RSVP');
       payload.append('fullName', formData.fullName);
+      payload.append('side', formData.side);
+      payload.append('guestSide', formData.side);
       payload.append('guests', formData.guests);
       payload.append('dietaryNotes', formData.dietaryNotes);
-      payload.append('event', eventParam);
 
       await fetch(scriptUrl, {
         method: 'POST',
@@ -45,7 +75,12 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
 
       setStatus('success');
       toast.success('Your RSVP has been warmly received!');
-      setFormData({ fullName: inviteeName, guests: '1', dietaryNotes: '' });
+      setFormData({
+        fullName: inviteeName,
+        side: parseSideParam(sideParam),
+        guests: '1',
+        dietaryNotes: '',
+      });
     } catch (error) {
       console.error('Error sending RSVP: ', error);
       setStatus('error');
@@ -142,6 +177,73 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   />
+                </div>
+
+                <div>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-3 ml-2 flex items-center justify-between">
+                    <span>
+                      Guest Of <span className="text-brand-rose">*</span>
+                    </span>
+                    {formData.side && (
+                      <span className="text-white/80 font-serif italic text-xs tracking-normal font-normal">
+                        {formData.side}
+                      </span>
+                    )}
+                  </label>
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, side: "Mihiri's Side (Bride)" }))}
+                      className={`group relative py-3.5 sm:py-4 px-2 sm:px-4 rounded-2xl sm:rounded-full border text-center transition-all duration-300 font-serif text-sm sm:text-base flex items-center justify-center gap-1.5 sm:gap-2 outline-none cursor-pointer ${
+                        formData.side === "Mihiri's Side (Bride)"
+                          ? 'bg-white text-[#020035] border-white font-semibold shadow-[0_8px_25px_rgba(255,255,255,0.25)] scale-[1.02]'
+                          : 'bg-white/10 text-white/85 border-white/20 hover:bg-white/15 hover:border-white/40 active:scale-[0.98]'
+                      }`}
+                    >
+                      <Heart
+                        className={`w-4 h-4 shrink-0 transition-all duration-300 ${
+                          formData.side === "Mihiri's Side (Bride)"
+                            ? 'fill-[#020035] text-[#020035] scale-110'
+                            : 'text-white/40 group-hover:text-white/70 group-hover:scale-110'
+                        }`}
+                      />
+                      <span className="flex flex-col sm:flex-row items-center sm:gap-1.5 leading-tight">
+                        <span>Mihiri's Side</span>
+                        <span className={`text-[11px] sm:text-xs font-sans tracking-normal font-normal ${
+                          formData.side === "Mihiri's Side (Bride)" ? 'text-[#020035]/70 font-medium' : 'text-white/60'
+                        }`}>(Bride)</span>
+                      </span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, side: "Himodya's Side (Groom)" }))}
+                      className={`group relative py-3.5 sm:py-4 px-2 sm:px-4 rounded-2xl sm:rounded-full border text-center transition-all duration-300 font-serif text-sm sm:text-base flex items-center justify-center gap-1.5 sm:gap-2 outline-none cursor-pointer ${
+                        formData.side === "Himodya's Side (Groom)"
+                          ? 'bg-white text-[#020035] border-white font-semibold shadow-[0_8px_25px_rgba(255,255,255,0.25)] scale-[1.02]'
+                          : 'bg-white/10 text-white/85 border-white/20 hover:bg-white/15 hover:border-white/40 active:scale-[0.98]'
+                      }`}
+                    >
+                      <Heart
+                        className={`w-4 h-4 shrink-0 transition-all duration-300 ${
+                          formData.side === "Himodya's Side (Groom)"
+                            ? 'fill-[#020035] text-[#020035] scale-110'
+                            : 'text-white/40 group-hover:text-white/70 group-hover:scale-110'
+                        }`}
+                      />
+                      <span className="flex flex-col sm:flex-row items-center sm:gap-1.5 leading-tight">
+                        <span>Himodya's Side</span>
+                        <span className={`text-[11px] sm:text-xs font-sans tracking-normal font-normal ${
+                          formData.side === "Himodya's Side (Groom)" ? 'text-[#020035]/70 font-medium' : 'text-white/60'
+                        }`}>(Groom)</span>
+                      </span>
+                    </button>
+                  </div>
+                  {!formData.side && (
+                    <p className="text-white/45 text-[11px] font-serif italic mt-2 ml-2">
+                      Please select whether you are attending from Mihiri's side (Bride) or Himodya's side (Groom)
+                    </p>
+                  )}
                 </div>
 
                 <div>

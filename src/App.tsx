@@ -19,6 +19,7 @@ export default function App() {
   const titleParam = params.get('title') || '';
   const nameParam = params.get('name') || '';
   const eventParam = params.get('event') || 'both';
+  const sideParam = params.get('side') || '';
 
   const fullInviteeName = `${titleParam} ${nameParam}`.trim();
 
@@ -103,6 +104,7 @@ export default function App() {
         weddingDate={weddingDate}
         isMusicPlaying={isMusicPlaying}
         onToggleMusic={toggleMusic}
+        sideParam={sideParam}
       />
 
       <AnimatePresence mode="wait">

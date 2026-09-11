@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Copy, Check, ExternalLink, Sparkles, User, Calendar, Link as LinkIcon, Trash2, ArrowLeft } from 'lucide-react';
+import { Copy, Check, ExternalLink, Sparkles, User, Calendar, Link as LinkIcon, Trash2, ArrowLeft, Heart } from 'lucide-react';
 import { toast } from 'sonner';
 
 export const Admin: React.FC = () => {
   const [guestTitle, setGuestTitle] = useState('Mr.');
   const [guestName, setGuestName] = useState('');
+  const [guestSide, setGuestSide] = useState('');
   const [generatedUrl, setGeneratedUrl] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -21,6 +22,7 @@ export const Admin: React.FC = () => {
     const params = new URLSearchParams();
     if (guestTitle) params.append('title', guestTitle);
     params.append('name', guestName.trim());
+    if (guestSide) params.append('side', guestSide);
 
     const fullUrl = `${baseUrl}/?${params.toString()}`;
     setGeneratedUrl(fullUrl);
@@ -143,6 +145,22 @@ With love,
                     onChange={(e) => setGuestName(e.target.value)}
                     className="w-full bg-white px-6 py-4 rounded-full border border-stone-200/80 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all font-serif italic text-lg shadow-inner text-stone-800 placeholder:text-stone-400"
                   />
+                </div>
+
+                <div>
+                  <label className="block text-xs uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 flex items-center gap-2 ml-1">
+                    <Heart className="w-4 h-4 text-brand-plum" />
+                    Guest Side (Optional)
+                  </label>
+                  <select
+                    value={guestSide}
+                    onChange={(e) => setGuestSide(e.target.value)}
+                    className="w-full bg-white px-6 py-4 rounded-full border border-stone-200/80 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all font-serif text-lg shadow-inner text-stone-800 cursor-pointer"
+                  >
+                    <option value="">Let Guest Choose in RSVP</option>
+                    <option value="mihiri">Mihiri's Side (Bride)</option>
+                    <option value="himodya">Himodya's Side (Groom)</option>
+                  </select>
                 </div>
               </div>
 

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Heart, Music, Camera, Utensils, PartyPopper } from 'lucide-react';
 
 const events = [
-  { time: '06:00 PM', title: 'Poruwa Ceremony', icon: Heart, desc: 'The traditional Poruwa Ceremony at Grand Walawwa.' },
+  { time: '06:00 PM', title: 'Poruwa Ceremony', icon: Heart, desc: 'The traditional Poruwa Ceremony at The Grand Walawwa.' },
   { time: '06:30 PM', title: 'Guest Arrival and Welcome', icon: PartyPopper, desc: 'Guests arrive and are welcomed.' },
   { time: '07:15 PM', title: 'Bar Open', icon: Music, desc: 'Bar opens.' },
   { time: '08:00 PM', title: 'Dinner Buffet', icon: Utensils, desc: 'Dinner buffet opens.' },
