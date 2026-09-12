@@ -126,7 +126,6 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({
               }
             </p>
             <div className="mt-6 mb-8 text-sm font-sans tracking-[0.2em] uppercase font-semibold text-white drop-shadow-sm leading-loose">
-              RSVP BY 1st November 2026<br />
               071-3449391 - Himodya <br /> 
               077-1932004 - Mihiri
             </div>
@@ -258,6 +257,9 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({
                       <option value="2" className="text-stone-800">We are coming! (2 Guests)</option>
                       <option value="3" className="text-stone-800">3 Guests</option>
                       <option value="4" className="text-stone-800">4 Guests</option>
+                      <option value="5" className="text-stone-800">5 Guests</option>
+                      <option value="6" className="text-stone-800">6 Guests</option>
+                      <option value="7" className="text-stone-800">7 Guests</option>
                     </select>
                     <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-white/60 transition-transform duration-300 group-hover:scale-110">
                       <Heart className="w-5 h-5 fill-white/20 drop-shadow-sm" />
